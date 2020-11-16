@@ -1,68 +1,97 @@
-.header {
-	padding-top: 60px;
-	img {
-		max-width: 18px;
+@import "../global";
+.hero {
+	background: url("../../assets/hero-bg.png") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 84vh;
+	&__content {
+		padding-top: vh(100);
+		padding-left: vw(100);
 	}
-	&__top {
+	&__product {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		padding: vh(100) vh(50) vh(60) vh(30);
+		max-width: vh(400);
+		background-color: $color-white;
 	}
-	&__cart,
-	&__phone {
-		margin-right: 17px;
+	&__title {
+		@include font($font-baby, vh(66), 700);
+		line-height: vh(62);
+		color: $color-green;
 	}
-}
-
-.logo {
-	&__link {
-		font-size: 46px;
-		letter-spacing: 5px;
-		color: #408b04;
-		font-weight: 700;
-		font-family: "Bebas Neue";
+	&__suptitle {
+		@include font($font-baby, vh(26), 700);
+		line-height: vh(28);
+		color: $color-darkGreen;
 	}
-}
-
-.nav {
-	&__menu {
-		display: flex;
-		justify-content: center;
-	}
-	&__item {
-		margin-right: 10px;
-		&:last-child {
-			margin: 0;
-		}
-	}
-	&__link {
-		position: relative;
-		font-size: 16px;
+	&__description {
+		@include font($font-steel, vh(24));
+		margin: vh(20) 0;
 		letter-spacing: 2px;
-		color: #808080;
-		font-weight: 400;
-		font-family: "Bebas Neue";
-		overflow: hidden;
-		padding: 0 20px;
-		&::before {
-			opacity: 0;
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 45%;
-			width: 0;
-			height: 2px;
-			background-color: #408b04;
-			transform: translateX(-25%) translateY(-50%);
-			transition: 0.5s;
-			z-index: 1;
-		}
-		&:hover {
-			color: #408b04;
-			&::before {
-				opacity: 1;
-				width: 174%;
+		line-height: vh(31);
+		color: $color-gray;
+	}
+	&__price {
+		@include font($font-steel, vh(46));
+		letter-spacing: 1px;
+		color: $color-darkGreen;
+	}
+	&__btn {
+		margin-top: vh(30);
+	}
+
+	&__shampoo {
+		position: absolute;
+		top: vh(320);
+		left: 50%;
+		max-width: vh(400);
+		transform: translateX(-50%);
+		height: vh(700);
+	}
+
+	&__leafs {
+		position: relative;
+		li {
+			width: vh(250);
+			img {
+				width: 100%;
 			}
 		}
+	}
+	&__leaf {
+		position: absolute;
+	}
+	.leaf {
+		&--1 {
+			bottom: vh(-320);
+			right: 0;
+		}
+		&--2 {
+			bottom: vh(-520);
+			left: vh(-100);
+		}
+		&--3 {
+			bottom: vh(-520);
+			left: vh(-100);
+		}
+		&--4 {
+			bottom: vh(-520);
+			left: vh(-100);
+		}
+		&--5 {
+			bottom: vh(-520);
+			left: vh(420);
+		}
+		&--6 {
+			bottom: vh(-220);
+			left: vh(185);
+		}
+	}
+	&__natural {
+		position: absolute;
+		right: vw(100);
+		top: vw(100);
+		width: vw(500);
 	}
 }
